@@ -1,0 +1,142 @@
+Create empty project 
+
+create folder for server and client
+
+create index.html, index.css, and index.js for client
+
+setup boilerplate html 
+
+link css and js to html
+
+add cdn axios link to html <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+setup h1 with some text to display on the page
+
+select that element in css and turn the text green
+
+console.log("It's a liopleurodon , Charlie") in the js
+
+test with live server to make sure everything shows up
+
+
+
+BUILD OUT SERVER
+
+create index.js and controller.js for server
+
+initiate npm
+
+install express and cors
+
+build out basic server file
+
+run with nodemon to make sure it's working
+
+after that, update package.json main prop for ease of use
+
+
+BUILD GET REQUEST
+
+create button on html called get dinosaurs, and give it an id of getDino
+
+Review 3 steps for js
+
+select getDino in js 
+
+write function with axios REQUEST
+
+since we are building this from scratch, we can define our own base URL endpoint
+
+http://localhost:2319
+
+in the .then, console.log the data that we'll be getting back
+
+set up a .catch to log an error on a bad request
+
+test out function -- WHY NO WORK? We haven't built out the endoint in our server or the function to go with it
+
+
+hop to controller and create array of dinosaurs
+
+build out module.exports with a getDinos function
+
+getDinos function should send the entire dino array back to the front endoint
+
+in server, destructure getDinos
+
+setup server side endoint for /dinos and trigger getDinos function
+
+test out button on client side to see that the data came through
+
+
+ADD DINOS TO OWN ELEMENTS
+
+On html, setup div for dinos to be displayed - id='dinoDisplay'
+
+In front end js, loop over res.data
+
+For each item, create new p element, give text content of res.data[i], and append to dinoDisplay
+
+If we run it over and over again, it will stack everythign on top of each other. Clear out the html of dinoDisplay each time you run it
+
+
+
+POST REQUEST
+
+Start in controller and build out addDino function
+
+destructure name from req.body
+
+push name into dinoArray
+
+send back full dinoArray
+
+
+destructure addDino in server
+
+add post endpoint for /dinos that runs addDino
+
+
+BEFORE building front end, test with postman
+
+Once we know it's working, build in html
+
+
+create input field and button to add dino with h3 above 
+
+in html select add button and input field at top
+
+write function for add dino
+
+create body object with name property and value of the input field
+
+axios.post to endpoint defined in server, passing in body object as second argument
+
+copy and paste display loop
+
+
+PROBABLY AT TIME - might build param for id deletion
+
+Add deleteDino to controller
+
+set index - req.params.id - 1
+
+splice index out of dinoArray
+
+return dinoArray
+
+
+destructure deleteDino in server
+
+add endpoint to take in id param and trigger deleteDino
+
+
+on front end, create a delete dino input and button with ids
+
+select ids in js
+
+
+
+
+
+
